@@ -8,6 +8,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RestController;
 
+import java.util.List;
+
 /**
  * Created by lujq on 10/9/2021.
  */
@@ -20,7 +22,8 @@ public class EmployeeController {
 
     @GetMapping(value = "/getEmployee")
     public void getEmployee(){
-        Employee employee = employeeService.findById(10011);
-        logger.info("find employee {}",employee);
+//        Employee employee = employeeService.findById(10011);
+        List<Employee> all = employeeService.findAll();
+        logger.info("find employee {}",all);
     }
 }
